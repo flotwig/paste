@@ -1,5 +1,5 @@
 <?php
-$this->action=$data->linkRoot.'paste';
+$this->action=$_SERVER['QUERY_STRING'];
 $this->formPrefix='paste_';
 $this->submitTitle=$data->phrases['paste']['savePaste'];
 $this->fromForm='pasteForm';
@@ -50,5 +50,4 @@ $this->fields=array(
 			'type' => 'hidden'
 		)
 	),
-
 );
