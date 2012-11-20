@@ -1,5 +1,5 @@
 <?php
-$this->action=$_SERVER['QUERY_STRING'];
+$this->action=$data->linkRoot.'/paste';
 $this->formPrefix='paste_';
 $this->submitTitle=$data->phrases['paste']['savePaste'];
 $this->fromForm='pasteForm';
@@ -23,13 +23,6 @@ $this->fields=array(
 			'rows' => 80,
 			'style' => 'width:100%;height:500px;',
 		)
-	),
-	'private' => array(
-		'label' => 'Private paste?',
-		'params' => array(
-			'type' => 'checkbox',
-		),
-		'value' => '',
 	),
 	'type' => array(
 		'label' => 'Type',

@@ -6,7 +6,6 @@ function paste_settings() {
         'version'   => '0.1'
     );
 }
-
 function paste_install($db,$drop=false) {
 	$structures = array(
 		'pastes' => array(
@@ -16,8 +15,9 @@ function paste_install($db,$drop=false) {
 			'views'                => SQR_ID.' DEFAULT 0',
 			'private'              => SQR_boolean,
 			'type'                 => 'VARCHAR(15) NOT NULL',
-			'password'             => 'VARCHAR(64) DEFAULT "" NULL',
+			'password'             => 'VARCHAR(127) DEFAULT "" NULL',
 			'created'              => SQR_added,
+			'domain'               => SQR_title,
 		),
 	);
 	if ($drop)

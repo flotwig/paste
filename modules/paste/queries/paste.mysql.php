@@ -14,8 +14,15 @@ function paste_addQueries() {
 		',
 		'saveNewPaste' => '
 			INSERT INTO !prefix!pastes
-			       ( name, paste, private, type, password)
-			VALUES (:name,:paste,:private,:type,:password)
+			       ( name, paste, private, type, password, domain)
+			VALUES (:name,:paste,:private,:type,:password,:domain)
+		',
+		'getLatest20PastesByDomain' => '
+			SELECT name, id, created FROM !prefix!pastes
+			WHERE private != 1
+			  AND domain  =  :domain
+			ORDER BY created DESC
+			LIMIT 20
 		',
 	);
 }
